@@ -14,10 +14,14 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-    res.send('POST its working')
+    res.status(201).send('POST its working')
     const request = req.body
     console.log(request,temperature)
-    res.status(201).send()
+    // res.status(201).send()
+})
+
+app.put('/', (req, res) => {
+    res.send('PUT its working');
 })
 
 async function main() {
