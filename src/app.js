@@ -24,6 +24,10 @@ app.put('/', (req, res) => {
     res.send('PUT its working');
 })
 
+app.delete('/', (req, res) => {
+    res.send('DELETE its working');
+})
+
 async function main() {
     await mongoose.connect(`mongodb+srv://${process.env.MY_USER}:${process.env.MY_PASSWORD}@cluster0.mxpes.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
     app.listen(port, (req, res) => {
