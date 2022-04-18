@@ -9,23 +9,25 @@ const port = 4001;
 app.use(json())
 app.use(cors());
 
+let temperatures = [];
+
 app.get('/', (req, res) => {
-    res.send('Hello World\n');
+    res.status(200).send(`${temperatures}\n`);
 })
 
 app.post('/', (req, res) => {
-    res.status(201).send('POST its working')
     const request = req.body
-    console.log(request,temperature)
-    // res.status(201).send()
+    console.log(request.temperature)
+    res.status(201).send('POST its working\n')
 })
 
 app.put('/', (req, res) => {
-    res.send('PUT its working');
+    res.send('PUT its working\n');
 })
 
 app.delete('/', (req, res) => {
-    res.send('DELETE its working');
+    temperatures = [];
+    res.status(200).send('DELETE its working\n');
 })
 
 async function main() {
