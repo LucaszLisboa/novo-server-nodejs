@@ -13,7 +13,6 @@ app.use(json())
 app.use(cors());
 app.use('/temperature', temperatures)
 app.use(express.static('public'))
-
 app.get('/', (req, res) => {
     res.status(200).sendFile(path.join(__dirname, 'views', "index.html"))
 
